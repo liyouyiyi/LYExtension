@@ -9,6 +9,8 @@
 #ifndef PayBao_Extension_h
 #define PayBao_Extension_h
 
+
+#import "Constant.h"
 #import "UIImage+Custom.h"
 #import "NSDate+Formater.h"
 #import "NSString+Custome.h"
