@@ -10,10 +10,44 @@
 
 @interface UIViewController (Custom)
 
++ (UIViewController *)viewControllerWithId:(NSString *)identifier storyboardName:(NSString *)storyboardName;
+
 - (void)pushToViewControllerWithStoryboardId:(NSString *)storyboardId;
+- (BOOL)popToViewControllerWithName:(NSString *)viewControllerName;
 
-- (void)addLeftBarItem:(NSString *)title image:(NSString *)image hImage:(NSString *)hImage target:(id)target action:(SEL)action;
+- (void)addLeftBarItem:(NSString *)title
+             imageName:(NSString *)imageName
+            hImageName:(NSString *)hImageName
+                target:(id)target
+                action:(SEL)action;
 
-- (void)addRightBarItem:(NSString *)title image:(NSString *)image hImage:(NSString *)hImage target:(id)target action:(SEL)action frame:(CGRect)frame;
+- (void)addLeftBarItem:(NSString *)title
+                 image:(UIImage *)image
+                hImage:(UIImage *)heName
+                target:(id)target
+                action:(SEL)action;
+
+- (void)addRightBarItem:(NSString *)title
+                  image:(UIImage *)image
+                 hImage:(UIImage *)hImage
+                 target:(id)target
+                 action:(SEL)action;
+
+- (void)addRightBarItem:(NSString *)title
+              imageName:(NSString *)imageName
+             hImageName:(NSString *)hImageName
+                 target:(id)target
+                 action:(SEL)action;
+
+- (void)setTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font;
+- (void)setNormalTitle:(NSString *)title;
+
+- (void)showLeftBackBarItemWithTitle:(NSString *)title;
+- (void)showLeftAvatarBarItemWithImage:(UIImage *)image target:(id)target action:(SEL)action;
+
+- (UIView *)getRightItemView;
+- (UIButton *)getRightButton;
+
+- (void)goBack;
 
 @end

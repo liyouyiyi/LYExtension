@@ -10,6 +10,12 @@
 
 @interface UIView (Custom)
 
++ (UIView *)viewWithFrame:(CGRect)frame backgroundColor:(UIColor *)backgroundColor;
+/*!
+ * width和height是固定的
+ */
++ (UIView *)createRedDotViewWithFrame:(CGRect)frame number:(NSInteger)number;
+
 - (CGFloat)top;
 - (CGFloat)bottom;
 - (CGFloat)left;
@@ -21,6 +27,11 @@
 - (void)setY:(CGFloat)y;
 - (void)setWidth:(CGFloat)width;
 - (void)setHeight:(CGFloat)width;
+
+- (void)setCenterX:(CGFloat)centerX;
+- (CGFloat)centerX;
+- (void)setCenterY:(CGFloat)centerY;
+- (CGFloat)centerY;
 
 + (UIView *)lineView:(CGFloat)leftMargin topMargin:(CGFloat)topMargin;
 + (UIView *)lineView:(CGFloat)leftMargin rightMargin:(CGFloat)rightMargin topMargin:(CGFloat)topMargin;
@@ -34,5 +45,20 @@
  * 删除所有的子视图
  */
 - (void)removeAllSubViews;
+
+/*!
+ * 把view转换成image
+ */
+- (UIImage *)convertToImage;
+
+@end
+
+
+@interface UIView (PurchaseBao)
+
++ (UIView *)headerView;
+- (void)dashedLineBorder;
+
+- (id)with:(void(^)(id v))setting;
 
 @end

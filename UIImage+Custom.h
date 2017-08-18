@@ -10,6 +10,9 @@
 
 @interface UIImage (Custom)
 
++ (UIImage *)imageWithURLString:(NSString *)urlString;
+
+- (UIImage *)transformWidth:(CGFloat)width height:(CGFloat)height;
 /*!
  * 拉伸图片
  */
@@ -20,6 +23,10 @@
  */
 - (UIImage *)scaleWithWidth:(CGFloat)width height:(CGFloat)height;
 - (UIImage *)scaleWithSize:(CGSize)size;
+/*!
+ * 限制图片最大宽度和最大高度
+ */
+- (UIImage *)scaleWithMaxWidth:(CGFloat)maxWidth maxheight:(CGFloat)maxHeight;
 
 /*!
  * 切割图片
@@ -29,5 +36,19 @@
 
 + (UIImage *)imageWithColor:(UIColor*)color;
 
+- (CGFloat)width;
+- (CGFloat)height;
+
+- (CGSize)sizeWithLimitMaxWidth:(CGFloat)maxWidth maxHeight:(CGFloat)maxHeight;
+
++ (void)loadImageFromURLStr:(NSString *)urlStr complete:(void(^)(UIImage *image))complete;
 
 @end
+
+
+
+
+
+
+
+
